@@ -4,7 +4,7 @@
 class IncomeSource:
     # Represents a source of income for an individual.
     def __init__(self, employee_income, life_insurance, child_education_allowance, other_allowance, spouse_income, house_rent):
-        self.employee_income = int(employee_income)  # Convert income to integer
+        self.employee_income = int(employee_income)  # Converting income to integer
         self.life_insurance = int(life_insurance)
         self.child_education_allowance = child_education_allowance
         self.other_allowance = int(other_allowance)
@@ -23,7 +23,7 @@ class IncomeSource:
             (1000001, 1500000): 0.25,
             (1500001, float('inf')): 0.30
         }
-
+         # Find the applicable tax rate by iterating through pay slap.
         for min_income, max_income in Tax_rates:
             if min_income <= taxable_income <= max_income:
                 tax_rate = Tax_rates[(min_income, max_income)]
@@ -52,7 +52,7 @@ class Relation_status:
 
 
 class Deductions:
-    def __init__(self, life_insurance, house_loan_interest, house_rent):  # Removed organization_type
+    def __init__(self, life_insurance, house_loan_interest, house_rent):
         self.life_insurance = int(life_insurance)
         self.house_loan_interest = int(house_loan_interest)
         self.house_rent = int(house_rent)
@@ -74,7 +74,7 @@ def get_user_input(prompt):
 Employee_name = input("Enter your name: ")
 Age = input("Enter your age: ")
 Job = input("Enter your occupation: ")
-Income = get_user_input("Enter your income * 12: ")  # Changed prompt for clarity
+Income = get_user_input("Enter your income * 12: ")  
 Relation_Status = input("What is your marital status?(single, married or divorce): ")
 Children = get_user_input("Number of children enrolled in school?: ")
 bonus = get_user_input("Enter bonus amount (if any): ")  # Optional bonus
